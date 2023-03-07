@@ -12,9 +12,6 @@ function start() {
   // 2. Initialize the JavaScript client library.
   gapi.client.init({
     'apiKey': 'AIzaSyCUxC5-3lNLFdiy5U4r5gs8cG6g_Wvc3e4',
-    // clientId and scope are optional if auth is not required.
-    'clientId': '1043918191401-55idktvh9ivq3hbii54sqf55g07e4bk1.apps.googleusercontent.com',
-    'scope': 'profile',
   }).then(function() {
     // 3. Initialize and make the API request.
     return gapi.client.request({
