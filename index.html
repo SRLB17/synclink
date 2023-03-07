@@ -6,6 +6,29 @@
     <title>Synclink</title>
 
     <script type="text/javascript" src="./scripts/index.js" ></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+<script>
+function start() {
+  // 2. Initialize the JavaScript client library.
+  gapi.client.init({
+    'apiKey': 'AIzaSyCUxC5-3lNLFdiy5U4r5gs8cG6g_Wvc3e4',
+    // clientId and scope are optional if auth is not required.
+    'clientId': '1043918191401-55idktvh9ivq3hbii54sqf55g07e4bk1.apps.googleusercontent.com',
+    'scope': 'profile',
+  }).then(function() {
+    // 3. Initialize and make the API request.
+    return gapi.client.request({
+      'path': 'https://docs.google.com/spreadsheets/d/1hwmAP-sNo6dOk8RxvK5ljyMpLfjndT7muiUcGlcwAw4/edit#gid=0',
+    })
+  }).then(function(response) {
+    console.log(response.result);
+  }, function(reason) {
+    console.log('Error: ' + reason.result.error.message);
+  });
+};
+// 1. Load the JavaScript client library.
+gapi.load('client', start);
+</script>
 
   </head>
   <body>
